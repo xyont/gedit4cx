@@ -4,20 +4,20 @@
  Authors: Faisal Rehman (2013), Suyono Nt.(2023)
 
 -->
-<language id="ccx" _name="CalculiX" version="2.21" _section="Sources">
+<language id="ccx" _name="CalculiX" version="2.0" _section="Sources">
   <metadata>
     <property name="mimetypes">text/x-inp</property>
     <property name="globs">*.inp</property>
   </metadata>
   <styles>
     <style id="comment"           _name="Comment"               map-to="def:comment"></style>
-    <style id="parameter"         _name="Parameter"             map-to="def:parameter"></style>
+    <style id="parameter"         _name="Parameter"             map-to="def:string"></style>
     <style id="keyword"           _name="Keyword"               map-to="def:keyword"></style>
     <style id="card"              _name="Input Cards"           map-to="def:type"></style>
     <style id="element"           _name="Element Library"       map-to="def:constant"></style>
     <style id="floating-point"    _name="Floating point number" map-to="def:floating-point"></style>
     <style id="decimal"           _name="Decimal number"        map-to="def:decimal"></style>
-    <style id="output"            _name="Output"                map-to="def:output"></style>
+    <style id="output"            _name="Output"                map-to="def:type"></style>
   </styles>
   <definitions>
     <context id="comment" style-ref="comment">
@@ -34,14 +34,14 @@
         (?![w.])
       </match>
     </context>
-    <context id="decimal" style-ref="decimal">
+    <context id="decimals" style-ref="decimal">
       <match extended="true">
         (?&lt;![w.])
         [0-9]+[uUlL]*
         (?![w.])
       </match>
     </context>
-    <context id="output" style-ref="output">
+    <context id="outputs" style-ref="output">
       <keyword>U</keyword>
       <keyword>V</keyword>
       <keyword>VF</keyword>
@@ -122,7 +122,7 @@
       <keyword>CFN</keyword>
       <keyword>CFS</keyword>
     </context>
-    <context id="parameter" style-ref="parameter">
+    <context id="parameters" style-ref="parameter">
       <keyword>ORTHO</keyword>
       <keyword>ISOTROPIC</keyword>
       <keyword>KINEMATIC</keyword>
@@ -227,6 +227,8 @@
       <keyword>NLGEOM</keyword>
       <keyword>STORAGE</keyword>
       <keyword>ABSOLUTE ZERO</keyword>
+
+
       <keyword>STEFAN BOLTZMANN</keyword>
       <keyword>INC</keyword>
       <keyword>INPUT</keyword>
@@ -456,6 +458,7 @@
       <keyword>END STEP</keyword>
       <keyword>EQUATION</keyword>
       <keyword>EXPANSION</keyword>
+
       <keyword>FEASIBLE DIRECTION</keyword>
       <keyword>FILTER</keyword>
       <keyword>FILM</keyword>
@@ -544,10 +547,11 @@
     <context id="ccx">
       <include>
         <context ref="gtk-doc:inline-docs-section"></context>
-        <context ref="comment"></context>
-        <context ref="float"></context>
-        <context ref="decimal"></context>
-        <context ref="parameter"></context>
+        <context ref="comments"></context>
+        <context ref="outputs"></context>
+        <context ref="floats"></context>
+        <context ref="decimals"></context>
+        <context ref="parameters"></context>
         <context ref="keywords"></context>
         <context ref="cards"></context>
         <context ref="elements"></context>
