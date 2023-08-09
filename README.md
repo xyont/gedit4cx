@@ -1,2 +1,2 @@
-# gedit4cx
-Gedit for CalculiX
+# Gedit for CalculiX
+CalculiX set up and inteaction inside Gedit 
