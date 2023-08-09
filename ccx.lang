@@ -11,7 +11,7 @@
   </metadata>
   <styles>
     <style id="comment"           _name="Comment"               map-to="def:comment"></style>
-    <style id="parameter"         _name="Parameter"             map-to="def:string"></style>
+    <style id="parameter"         _name="Parameter"             map-to="def:special-char"></style>
     <style id="keyword"           _name="Keyword"               map-to="def:keyword"></style>
     <style id="card"              _name="Input Cards"           map-to="def:type"></style>
     <style id="element"           _name="Element Library"       map-to="def:constant"></style>
@@ -20,12 +20,12 @@
     <style id="output"            _name="Output"                map-to="def:type"></style>
   </styles>
   <definitions>
-    <context id="comment" style-ref="comment">
+    <context id="comments" style-ref="comment">
     <start>**</start>
     <end>$</end>
     </context>
     <!-- http://www.lysator.liu.se/c/ANSI-C-grammar-l.html -->
-    <context id="float" style-ref="floating-point">
+    <context id="floats" style-ref="floating-point">
       <match extended="true">
         (?&lt;![w.])
         ((.[0-9]+ | [0-9]+.[0-9]*) ([Ee][+-]?[0-9]*)? |
@@ -161,7 +161,7 @@
       <keyword>NODE</keyword>                                                                          
       <keyword>NEW</keyword>
       <keyword>MOD</keyword>
-      <keyword>TANGENT FRACTION</keyword>                                                                           
+      <keyword>TANGENT FRACTION</keyword>                                                   
       <keyword>MATRIXSTORAGE</keyword>
       <keyword>SPOOLES</keyword>
       <keyword>TAUCS</keyword>
@@ -227,8 +227,6 @@
       <keyword>NLGEOM</keyword>
       <keyword>STORAGE</keyword>
       <keyword>ABSOLUTE ZERO</keyword>
-
-
       <keyword>STEFAN BOLTZMANN</keyword>
       <keyword>INC</keyword>
       <keyword>INPUT</keyword>
@@ -338,7 +336,7 @@
       <keyword>PLANE</keyword>
       <keyword>STRAIGHT</keyword>
       <keyword>BEAM</keyword>
-      <keyword>SYSTEM</keyword>                                                                                                
+      <keyword>SYSTEM</keyword>                                                                             
     </context>
     <context id="elements" style-ref="element">
       <keyword>C3D8</keyword>
@@ -458,7 +456,6 @@
       <keyword>END STEP</keyword>
       <keyword>EQUATION</keyword>
       <keyword>EXPANSION</keyword>
-
       <keyword>FEASIBLE DIRECTION</keyword>
       <keyword>FILTER</keyword>
       <keyword>FILM</keyword>
