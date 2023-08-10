@@ -17,7 +17,7 @@
     <style id="element"           _name="Element Library"       map-to="def:constant"></style>
     <style id="floating-point"    _name="Floating point number" map-to="def:floating-point"></style>
     <style id="decimal"           _name="Decimal number"        map-to="def:decimal"></style>
-    <style id="output"            _name="Output"                map-to="def:type"></style>
+    <style id="request"            _name="Requests"                map-to="def:type"></style>
   </styles>
   <definitions>
     <context id="comments" style-ref="comment">
@@ -41,7 +41,7 @@
         (?![w.])
       </match>
     </context>
-    <context id="outputs" style-ref="output">
+    <context id="requests" style-ref="request">
       <keyword>U</keyword>
       <keyword>V</keyword>
       <keyword>VF</keyword>
@@ -121,11 +121,17 @@
       <keyword>CF</keyword>
       <keyword>CFN</keyword>
       <keyword>CFS</keyword>
+      <keyword>MAXSHRINKAGE</keyword>
+      <keyword>MAXGROWTH</keyword>
+      <keyword>PACKAGING</keyword>
+      <keyword>MAXMEMBERSIZE</keyword>
+      <keyword>MINMEMBERSIZE</keyword>
     </context>
     <context id="parameters" style-ref="parameter">
       <keyword>ORTHO</keyword>
       <keyword>ISOTROPIC</keyword>
       <keyword>KINEMATIC</keyword>
+      <keyword>COMBINED</keyword>
       <keyword>ISO</keyword>
       <keyword>ANISO</keyword>
       <keyword>ENGINEERING CONSTANTS</keyword>
@@ -158,10 +164,14 @@
       <keyword>COORDINATE</keyword> 
       <keyword>ONLY</keyword>
       <keyword>TOTAL TIME</keyword>
-      <keyword>NODE</keyword>                                                                          
+      <keyword>ACTIVE</keyword>
+      <keyword>AIR</keyword>
+      <keyword>NITROGEN</keyword>
+      <keyword>ONLY</keyword>
+      <keyword>NODE</keyword>                
       <keyword>NEW</keyword>
       <keyword>MOD</keyword>
-      <keyword>TANGENT FRACTION</keyword>                                                   
+      <keyword>TANGENT FRACTION</keyword>                           
       <keyword>MATRIXSTORAGE</keyword>
       <keyword>SPOOLES</keyword>
       <keyword>TAUCS</keyword>
@@ -188,6 +198,8 @@
       <keyword>GRADIENT DESCENT</keyword>
       <keyword>GRADIENT PROJECTION</keyword>
       <keyword>LINEAR</keyword>
+      <keyword>EXPONENTIAL</keyword>
+      <keyword>TABULAR</keyword>
       <keyword>QUADRATIC</keyword>
       <keyword>CUBIC</keyword>
       <keyword>GAUSS</keyword>
@@ -207,6 +219,28 @@
       <keyword>CONTACT PAIR</keyword>
       <keyword>STRAIN FREE</keyword>
       <keyword>WITH STRAIN</keyword>
+      <keyword>N</keyword>
+      <keyword>P</keyword>
+      <keyword>NEG</keyword>
+      <keyword>POS</keyword>
+      <keyword>ORIFICE</keyword>
+      <keyword>ORIFICE_PK_MS</keyword>
+      <keyword>RESTRICTOR</keyword>
+      <keyword>BRANCH</keyword>
+      <keyword>VORTEX</keyword>
+      <keyword>TIED</keyword>
+      <keyword>RECTANGULAR</keyword>
+      <keyword>CYLINDRICAL</keyword>
+      <keyword>JOHNSON COOK</keyword>
+      <keyword>DRAG</keyword>
+      <keyword>FLUX</keyword>
+      <keyword>SOF</keyword>
+      <keyword>SOM</keyword>
+      <keyword>SOAREA</keyword>
+      <keyword>R</keyword>
+      <keyword>C</keyword>
+      <keyword>MECHANICAL</keyword>
+      <keyword>THERMAL</keyword>
       <keyword>USER</keyword>                                                                      
     </context>
     <context id="keywords" style-ref="keyword">
@@ -228,6 +262,7 @@
       <keyword>STORAGE</keyword>
       <keyword>ABSOLUTE ZERO</keyword>
       <keyword>STEFAN BOLTZMANN</keyword>
+      <keyword>NEWTON GRAVITY</keyword>
       <keyword>INC</keyword>
       <keyword>INPUT</keyword>
       <keyword>INCF</keyword>
@@ -240,6 +275,7 @@
       <keyword>TIME RESET</keyword>
       <keyword>TIME POINTS</keyword>
       <keyword>TIME RESET</keyword>
+      <keyword>TOTAL TIME AT START</keyword>
       <keyword>LAST ITERATIONS</keyword>
       <keyword>CONTACT ELEMENTS</keyword>
       <keyword>LOAD CASE</keyword>
@@ -249,15 +285,18 @@
       <keyword>SUBMODEL</keyword>
       <keyword>STEP</keyword>
       <keyword>DATA STEP</keyword>
+      <keyword>DATA SET</keyword>
+      <keyword>FILE</keyword>
+      <keyword>BSTEP</keyword>
       <keyword>MASS FLOW</keyword>
       <keyword>CORIOLIS</keyword>
       <keyword>STEADY STATE</keyword>
-      <keyword>TOTAL TIME AT START</keyword>
       <keyword>COMPRESSIBLE</keyword>
       <keyword>TURBULENCE MODEL</keyword>
       <keyword>SHALLOW WATER</keyword>
       <keyword>NODE</keyword>
       <keyword>SURFACE</keyword>
+      <keyword>ELEMENT</keyword>
       <keyword>COMPRESSIBLE</keyword>
       <keyword>SHOCK SMOOTHING</keyword>
       <keyword>MANNING</keyword>
@@ -267,10 +306,10 @@
       <keyword>EDGE PRESERVATION</keyword>
       <keyword>DIRECTION WEIGHTING</keyword>
       <keyword>TOTALS</keyword>
-      <keyword>TOTAL TIME AT START</keyword>
       <keyword>NO HEAT TRANSFER</keyword>
       <keyword>LIMIT</keyword>
-      <keyword>ORIENTATION</keyword> 
+      <keyword>ORIENTATION</keyword>
+      <keyword>OFFSET</keyword>  
       <keyword>OFFSET1</keyword> 
       <keyword>OFFSET2</keyword>
       <keyword>NODAL THICKNESS</keyword>
@@ -293,6 +332,7 @@
       <keyword>PARAMETERS</keyword>
       <keyword>RESET</keyword>
       <keyword>REF NODE</keyword>
+      <keyword>ROT NODE</keyword>
       <keyword>DIRECT</keyword>
       <keyword>ALPHA</keyword>
       <keyword>DELTMX</keyword>
@@ -310,6 +350,7 @@
       <keyword>BETA</keyword>
       <keyword>STRUCTURAL</keyword>
       <keyword>DIRECT</keyword>
+      <keyword>RAYLEIGH</keyword>
       <keyword>EXPLICIT</keyword>
       <keyword>RELATIVE TO ABSOLUTE</keyword>
       <keyword>REMOVE</keyword>
@@ -322,6 +363,7 @@
       <keyword>LIQUID</keyword>
       <keyword>STORAGE</keyword>
       <keyword>GLOBAL</keyword>
+      <keyword>CYCMPC</keyword>
       <keyword>MODE</keyword>
       <keyword>MISSION STEP</keyword>
       <keyword>MAX CYCLE</keyword>
@@ -336,7 +378,32 @@
       <keyword>PLANE</keyword>
       <keyword>STRAIGHT</keyword>
       <keyword>BEAM</keyword>
-      <keyword>SYSTEM</keyword>                                                                             
+      <keyword>DIST</keyword>
+      <keyword>CONSTRAINED</keyword>
+      <keyword>STIFFNESS FILE</keyword>
+      <keyword>RADIATION AMPLITUDE</keyword>
+      <keyword>RADIATION TIME DELAY</keyword>
+      <keyword>ENVNODE</keyword>
+      <keyword>CAVITY</keyword>
+      <keyword>READ</keyword>
+      <keyword>WRITE</keyword>
+      <keyword>WRITE ONLY</keyword>
+      <keyword>NO CHANGE</keyword>
+      <keyword>SORTED</keyword>
+      <keyword>RANDOM FIELD ONLY</keyword>
+      <keyword>NMIN</keyword>
+      <keyword>NMAX</keyword>
+      <keyword>NONLINEAR</keyword>
+      <keyword>HARMONIC</keyword>
+      <keyword>THERMAL NETWORK</keyword>
+      <keyword>FILE NAME</keyword>
+      <keyword>OUTPUT FILE</keyword>
+      <keyword>POSITION TOLERANCE</keyword>
+      <keyword>INTEGRATION POINTS</keyword>
+      <keyword>MAXDOF</keyword>
+      <keyword>NODES</keyword>
+      <keyword>CETOL</keyword>
+      <keyword>SYSTEM</keyword>
     </context>
     <context id="elements" style-ref="element">
       <keyword>C3D8</keyword>
