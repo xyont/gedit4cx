@@ -1,0 +1,60 @@
+# For complete documentation of this file, please see Geany's main documentation
+[styling]
+# Edit these in the colorscheme .conf file instead
+default=default
+comment=comment_line
+number=number
+string=string_1
+operator=operator
+processor=eltype
+starcommand=keyword
+argument=parameter
+
+[keywords]
+starcommand=anim area asgn aver bia body break call capt cmap cntr col comp cont copy corrad csysa cut del dist div ds elem else else if elty endif endwhile enq eprop eqal exit 
+fil flip flpc frame gbod gonly graph grpa grps gsur gtol hcpy help if int init lcmb length line lnor mata mats max maxc maxr menu merg mesh mids min minc minr 
+minus mm move movi msg mshp neigh node norm nurl nurs ori plot plus pnt prnt proj qadd qali qbia qbod qcnt qcut qdel qdis qdiv qenq qfil qflp qint qlin qmov qmsh qnor 
+qpnt qnod qrem qseq qshp qspl qsur qtxt quit read rep rnam rot save scal send seqa seqc seql seta setc sete seti setl seto setr shpe split steps stop subm surf swep sys test 
+thrs tra trfm txt typs ucut ulin val valu view volu while wpos wsize zap zoom
+
+argument=n e p l c s b S L se blend control compact define end knot norm be2 be2r be2f be2d be3 be3r be3f tr3 tr3u tr3e tr3s tr3c 
+tr6 tr6u tr6e tr6s tr6c qu4 qu4e qu4s qu4c qu4r qu4er qu4sr qu4cr qu8 qu7e qu8s qu8c qu8r qu8er qu8sr qu8cr he8 he8f he8i he8r 
+he20 he20r pe6 pe6f pe15 pe15r te4 te4f te10 te10m te10t tune steps time real model elem start 
+sh alpha beta nadapt bg on off graph max maxr maxc mem free keep netgen tetgen thrds rbe usr viewer browser 
+cgxhelpfile ccxhelpfile mult div classic gray inferno jet coolwarm turbo viridis do up f scal tra rot rad nor mir 
+l0 pic auto eq ne rec cz cy cx i a h jbir aspr mca d on off amp mat length time descr gif ps tga name png 
+add volu nolock lonly nolength noangle length angle force lin gen rem equ abq ans nas tie con equ yes nsc 
+v vs se par amp mat ext ndsb x -x -y -z fbd stl ast dar frd gmp lst ng pat skv tcg bin dbin tmf sta crp mpc raw spc spcf slide 
+trac press film rad dflux mflow cflux force quadlin sur dolfyn duns isaac periodic foam cyclic cycmpc areampc presfit gap px py pz 
+tx ty tz rx ry rz nod afte befo ld la ll ls ln pln cyl con tor sph nos abs pow sqr sin cos tan asin acos atan int float exp fill line point 
+adge elem front back vec disp keep bg sh ill rul 
+
+[settings]
+extension=fbd
+
+comment_single=#
+
+comment_use_indent=false
+
+context_action_cmd=
+
+[indentation]
+#width=4
+# 0 is spaces, 1 is tabs, 2 is tab & spaces
+#type=1
+
+
+[build_settings]
+# %f will be replaced by the complete filename
+# %e will be replaced by the filename without extension
+# (use only one of it at one time)
+compiler=
+run_cmd=cgx -b "%f"
+
+[build-menu]
+FT_00_LB=Datacheck
+FT_00_CM=cgx -v "%f"
+FT_00_BD=false
+FT_01_LB=Run Job
+FT_01_CM=cgx -b "%f"
+FT_01_BD=false
