@@ -1,2 +1,2 @@
 # Text Editor for CalculiX
-CalculiX set up and inteaction inside Gedit, SciTE & Geany
+CalculiX language set up and interaction inside Tex Editor (Gedit, SciTE & Geany)
